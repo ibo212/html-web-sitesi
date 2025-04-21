@@ -1,60 +1,162 @@
-<!--- This software is licensed under the MIT License: https://github.com/spacehuhntech/esp8266_deauther -->
-
-<!Doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="tr">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=0.8, minimal-ui">
-	<meta name="theme-color" content="#36393E">
-
-	<meta name="description" content="ESP8266 Deauther">
-	<title>ESP8266 Deauther</title>
-
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="js/site.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Halil İbrahim'in portföyü. Web güvenliği, site geliştirme ve grafik tasarımı hizmetleri sunuyorum.">
+  <meta name="keywords" content="web güvenliği, grafik tasarımı, site geliştirme, portföy, Halil İbrahim">
+  <title>hebozone | Portföy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background-image: url('background.jpg');
+      background-size: cover;
+      color: white;
+      padding: 4rem;
+      text-align: center;
+      background-position: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    header h1 {
+      font-size: 3.5rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.3rem;
+      margin: 0.5rem 0 0;
+    }
+    nav {
+      background-color: #2b2b3d;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #007bff;
+    }
+    .section {
+      padding: 3rem;
+      max-width: 900px;
+      margin: auto;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    h2 {
+      color: #1e1e2f;
+    }
+    .service-list li {
+      background: #e9ecef;
+      margin: 0.5rem 0;
+      padding: 1rem;
+      border-left: 5px solid #007bff;
+      transition: transform 0.3s ease;
+    }
+    .service-list li:hover {
+      transform: translateX(10px);
+    }
+    footer {
+      background-color: #1e1e2f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      header h1 {
+        font-size: 2.5rem;
+      }
+      .section {
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
+<body>
+  <header>
+    <h1>hebozone</h1>
+    <p>Web Güvenliği | Site Geliştirme | Grafik Tasarımı</p>
+  </header>
 
-<body onload="loadLang()">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<h1 class="header" data-translate="warning">WARNING</h1>
-				<p class="centered" data-translate="disclaimer">
-					This project is a proof of concept for testing and educational purposes.<br>
-					Neither the ESP8266, nor its SDK was meant or build for such purposes. Bugs can occur!<br>
-					<br>
-					Use it only against your own networks and devices!<br>
-					<br>
-					It uses valid Wi-Fi frames described in the IEEE 802.11 standard and does not block or disrupt any
-					frequencies.<br>
-					Please check the legal regulations in your country before using it.<br>
-					<br>
-					Please don't refer to this project as "jammer", as it undermines the real purpose of this
-					project!<br>
-					If you do, it only proves that you didn't understand anything of what this project stands for.<br>
-					Publishing content about this without without a proper explanation shows that you only do it for the
-					clicks,
-					fame and/or money and have no respect for intellectual property, the community behind it and the
-					fight for a better WiFi standard.<br>
-					<br>
-					For more information visit:<br>
-					<a
-						href="https://github.com/spacehuhntech/esp8266_deauther">github.com/spacehuhntech/esp8266_deauther</a>
-				</p>
-				<p class="centered bold">
-					<a class="button" href="scan.html" data-translate="disclaimer-button">I have read and understood the
-						notice above</a>
-				</p>
-			</div>
-		</div>
-	</div>
-	<footer>
-		<span id="version">Version 2.6.1</span>
-		<br>
-		<br>
-		<a href="http://deauther.maltronics.com" target="_blank">Wiki</a> | <a href="info.html">Credits</a>
-	</footer>
+  <nav>
+    <a href="#about">Hakkımda</a>
+    <a href="#services">Hizmetler</a>
+    <a href="#portfolio">Portföy</a>
+    <a href="#contact">İletişim</a>
+  </nav>
+
+  <section class="section" id="about">
+    <h2>Hakkımda</h2>
+    <div style="display: flex; align-items: center;">
+      <img src="images/arka.jpg" alt="Halil İbrahim" style="border-radius: 50%; width: 120px; margin-right: 20px;">
+
+      <p>Merhaba, ben Halil İbrahim. Web güvenliği, site geliştirme ve grafik tasarımı alanlarında hizmet veriyorum. Kısaca işlerinizi dijitale taşımanızda yardımcı oluyorum.</p>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <h2>Hizmetler</h2>
+    <ul class="service-list">
+      <li>Web sitesi güvenlik analizi</li>
+      <li>HTML / CSS ile responsive tasarım</li>
+      <li>WordPress kurulum ve özelleştirme</li>
+      <li>Logo & afiş tasarımı</li>
+    </ul>
+  </section>
+
+  <section class="section" id="portfolio">
+    <h2>Portföyüm</h2>
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <div style="flex: 1 1 30%; background-color: #e9ecef; padding: 20px; border-radius: 8px;">
+        <img src="project1.jpg" alt="Proje 1" style="width: 100%; height: auto; border-radius: 8px;">
+        <h3>Proje 1</h3>
+        <p>Kısa açıklama...</p>
+      </div>
+      <div style="flex: 1 1 30%; background-color: #e9ecef; padding: 20px; border-radius: 8px;">
+        <img src="project2.jpg" alt="Proje 2" style="width: 100%; height: auto; border-radius: 8px;">
+        <h3>Proje 2</h3>
+        <p>Kısa açıklama...</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>İletişim</h2>
+    <p>Bana ulaşmak için e-posta adresim: <strong>advisordrg@gmail.com</strong></p>
+    <form action="#" method="post">
+      <label for="name">Adınız:</label>
+      <input type="text" id="name" name="name" required><br><br>
+      <label for="email">E-posta:</label>
+      <input type="email" id="email" name="email" required><br><br>
+      <label for="message">Mesajınız:</label><br>
+      <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+      <input type="submit" value="Gönder">
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 hebozone. Tüm hakları saklıdır.</p>
+  </footer>
 </body>
-
 </html>
